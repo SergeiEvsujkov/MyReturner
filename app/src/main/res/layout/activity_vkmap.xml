@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".VKMapActivity">
+
+    <FrameLayout xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+
+        <ru.mail.maps.sdk.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+        <ru.mail.maps.sdk.views.ZoomView
+            android:id="@+id/zoomView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            custom:mapView="@+id/mapView" />
+
+
+        <ru.mail.maps.sdk.views.CompassView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            custom:mapView="@+id/mapView" />
+
+        <ru.mail.maps.sdk.views.MyLocationButton
+            android:id="@+id/locationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            custom:mapView="@+id/mapView" />
+
+
+    </FrameLayout>
+
+    <FrameLayout xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/infoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#000000"
+        android:layout_weight="1">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/design_default_color_error"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/record_coordinates"
+            android:id="@+id/saveBtn"
+            />
+
+    </FrameLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
